@@ -4,8 +4,15 @@ return [
    'auth' => \Src\Auth\Auth::class,
    //Клас пользователя
    'identity' => \Model\User::class,
-   //Классы для middleware
+   //Классы для middleware,
+   'validators' => [
+    'required' => \Validators\RequireValidator::class,
+    'unique' => \Validators\UniqueValidator::class
+   ],
+
    'routeMiddleware' => [
        'auth' => \Middlewares\AuthMiddleware::class,
    ]
 ];
+
+
